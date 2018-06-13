@@ -51,7 +51,7 @@ public class Prim {
             resp.add(auxaresta);
             adj.addAll(g.getAdjacentes(auxaresta.getOrigem()));
             for (int w : adj) {
-                    if (){
+              //      if (){
                         
                     }
         }
