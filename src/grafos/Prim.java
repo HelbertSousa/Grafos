@@ -5,6 +5,8 @@
  */
 package grafos;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -14,7 +16,11 @@ import java.util.Queue;
  */
 public class Prim {
     static Queue<Aresta> fila = null;
-    static int [] key,pi = null;
+    static int [] key = null;
+    static double [] pi  = null;
+    static List<Aresta> resp = null;
+    static Aresta auxaresta = null;
+    static List<Integer> adj = null;
     
     
     public Prim(GrafoAbstrato g){
@@ -26,19 +32,29 @@ public class Prim {
         }
         
         key = new int[g.getNumeroDeVertices()];
-        pi = new int[g.getNumeroDeVertices()];
+        pi = new double[g.getNumeroDeVertices()];
         for(int u = 0; u < g.getNumeroDeVertices(); u++){
             key[u]= Integer.MAX_VALUE;
+            pi[u]= -1;
         }
         
-        
-        
-        
+        resp = new LinkedList<>();
+        adj = new LinkedList<>();
     }
     
     public static RespostaKruskalPrim prim(GrafoAbstrato g){
         RespostaKruskalPrim result = new RespostaKruskalPrim();
-        
+        key[0] = 0;
+        boolean aux = false;
+        while(fila.isEmpty()){
+            auxaresta = fila.poll();
+            resp.add(auxaresta);
+            adj.addAll(g.getAdjacentes(auxaresta.getOrigem()));
+            for (int w : adj) {
+                    if (){
+                        
+                    }
+        }
         
         return result;
     }
