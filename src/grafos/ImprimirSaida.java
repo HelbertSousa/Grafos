@@ -79,8 +79,7 @@ public class ImprimirSaida {
 
         gravarArq.printf("Vertice x, Vertice y\n");
         int aux = 0;
-        for (int i = 0; i < r.resp.length; i++) {
-            
+        for (int i = 0; i < r.resp.length - 1; i++) {
             gravarArq.printf( r.resp[aux] + ",");
             aux = r.resp[aux];
             gravarArq.printf( r.resp[aux] + "");   

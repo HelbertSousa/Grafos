@@ -37,13 +37,13 @@ public class GrafoKruskalPrim {
             case "kruskal":
                 RespostaKruskalPrim resultKruskal;
                 Kruskal kruskal = new Kruskal(grafo);
-                resultKruskal = Kruskal.krus(grafo);
+                resultKruskal = kruskal.krus(grafo);
                 ImprimirSaida.ImprimirSaidaKruskal(argumentos.get("-output"), resultKruskal);
                 break;
             case "prim":
                 RespostaKruskalPrim resultPrim;
                 Prim prim = new Prim(grafo);
-                resultPrim = Prim.prim(grafo);
+                resultPrim = prim.prim(grafo);
                 ImprimirSaida.ImprimirSaidaKruskal(argumentos.get("-output"), resultPrim);
                 break;
         }

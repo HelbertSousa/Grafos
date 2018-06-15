@@ -5,6 +5,7 @@
  */
 package grafos;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -15,46 +16,56 @@ import java.util.Queue;
  * @author a15026
  */
 public class Prim {
-    static Queue<Aresta> fila = null;
-    static int [] key = null;
-    static double [] pi  = null;
+    static Queue<Aresta> filaprioridade = null;
+    static double [] key = null;
+    static int [] pi  = null;
     static List<Aresta> resp = null;
     static Aresta auxaresta = null;
-    static List<Integer> adj = null;
+    static double peso;
     
     
     public Prim(GrafoAbstrato g){
-        fila = new PriorityQueue<>();
+        filaprioridade = new PriorityQueue<>();
         for(int i = 0; i < g.getNumeroDeVertices(); i++){
             for(int j = 0; j < g.getNumeroDeVertices(); j++){
-                fila.add(new Aresta(i,j,(g.getAresta(i,j))));
+                filaprioridade.offer(new Aresta(i,j,(g.getAresta(i,j))));
             }
         }
         
-        key = new int[g.getNumeroDeVertices()];
-        pi = new double[g.getNumeroDeVertices()];
+        key = new double[g.getNumeroDeVertices()];
+        pi = new int[g.getNumeroDeVertices()];
         for(int u = 0; u < g.getNumeroDeVertices(); u++){
-            key[u]= Integer.MAX_VALUE;
+            key[u]= Double.MAX_VALUE;
             pi[u]= -1;
         }
         
         resp = new LinkedList<>();
-        adj = new LinkedList<>();
+
+    
     }
     
     public static RespostaKruskalPrim prim(GrafoAbstrato g){
         RespostaKruskalPrim result = new RespostaKruskalPrim();
         key[0] = 0;
-        boolean aux = false;
-        while(fila.isEmpty()){
-            auxaresta = fila.poll();
+        while(!filaprioridade.isEmpty()){
+            auxaresta = filaprioridade.poll();
             resp.add(auxaresta);
-            adj.addAll(g.getAdjacentes(auxaresta.getOrigem()));
-            for (int w : adj) {
-              //      if (){
-                        
-                    }
+            int u = auxaresta.getOrigem();
+            
+            for(Integer v : g.getAdjacentes(u)){
+                if (filaprioridade.contains(g.getAresta(u, v)))
+                    if(g.getAresta(u, v) < key[v]){
+                        pi[v] = auxaresta.getOrigem();
+                        key[v] = g.getAresta(u, v);                
+                }
+            }
         }
+        for(int i = 0; i < key.length; i++){
+                peso += key[i];
+        }
+        
+        result.peso = peso;
+        result.resp = pi;
         
         return result;
     }
