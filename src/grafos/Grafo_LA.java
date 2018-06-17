@@ -69,7 +69,6 @@ public final class Grafo_LA extends GrafoAbstrato {
                 return aux.peso;
             }
         }
-
         return 0.0;
     }
 

@@ -12,16 +12,9 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/BuscaProfundidade.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/GrafoAbstrato.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/Aresta.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/LerKruskalPrim.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/Kruskal.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/Prim.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/ImprimirSaida.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/GrafoKruskalPrim.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/LerArquivo.java</file>
-            <file>file:/home/a15026/Imagens/Trabalho%20Grafos/Grafos/src/grafos/BuscaEmLargura.java</file>
+            <file>file:/home/helbert/Documentos/RepositorioNetBeans/Grafos/src/grafos/Grafo_LA.java</file>
+            <file>file:/home/helbert/Documentos/RepositorioNetBeans/Grafos/src/grafos/Prim.java</file>
+            <file>file:/home/helbert/Documentos/RepositorioNetBeans/Grafos/src/grafos/Aresta.java</file>
         </group>
     </open-files>
 </project-private>
