@@ -28,11 +28,9 @@ public class GrafoKruskalPrim {
             representacao = Representacao.MATRIZ_ADJACENCIA;
         } else {
             representacao = Representacao.LISTAS_ADJACENCIA;
-        }
-        
+        }      
         GrafoAbstrato grafo = LerKruskalPrim.ler(argumentos.get("-input"), representacao);
-        
-        
+      
         switch (argumentos.get("-algorithm")) {
             case "kruskal":
                 RespostaKruskalPrim resultKruskal;

@@ -15,12 +15,7 @@ import java.util.Queue;
  */
 public class Kruskal {
 
-    
- 
-    static Queue fila = null;
-    static double[][] aux = null;
-    static int a, b;
-    static double w, peso;
+    static double peso;
     static int edgesaux, num = 0;
     
     static ArrayList<Aresta> edges = null;
@@ -46,13 +41,10 @@ public class Kruskal {
         RespostaKruskalPrim result = new RespostaKruskalPrim();
         
         while ((edgesaux  < g.getNumeroDeVertices()-1 || num < g.getNumeroArestas())){
-            a = edges.get(num).getOrigem();
-            b = edges.get(num).getDestino();
-            w = edges.get(num).getPeso();
-            
-            if (find(a) != find(b)){             
-                unite(a,b);           
-                peso += w;    
+                       
+            if (find(edges.get(num).getOrigem()) != find(edges.get(num).getDestino())){             
+                unite(edges.get(num).getOrigem(),edges.get(num).getDestino());           
+                peso += edges.get(num).getPeso();    
                 
                 edgesaux++;
             }    
