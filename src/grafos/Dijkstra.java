@@ -15,7 +15,7 @@ import java.util.Queue;
  *
  * @author a15026
  */
-public class Dijkstra {
+public abstract class Dijkstra {
     static int [] predecessor = null;
     static double[] d = null;
     static List<Aresta> resp = null;
@@ -36,19 +36,19 @@ public class Dijkstra {
         resp = new LinkedList<>();        
     }
     
-    public void dijkstra(GrafoAbstrato g, int vertice){
+    public static void dijkstra(GrafoAbstrato g, int vertice){
         while(fila.isEmpty()){
             aux = (Aresta) fila.poll();
             resp.add(aux);
             for(Integer v : g.getAdjacentes(aux.getOrigem())){
-                relax(aux.getOrigem(), v, g);
+                relax(aux.getOrigem(), v, g.getAresta(aux.getOrigem(), v));
             }
         }               
     }
     
-    public static void relax(int u, int v, GrafoAbstrato g){
-        if(d[v] > d[u] + g.getAresta(u, v)){
-            d[v] = d[u] + g.getAresta(u, v);
+    public static void relax(int u, int v, double peso){
+        if(d[v] > d[u] + peso){
+            d[v] = d[u] + peso;
             predecessor[v] = u;
         }    
     }    

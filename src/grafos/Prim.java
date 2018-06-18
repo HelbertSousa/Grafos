@@ -22,8 +22,7 @@ public class Prim {
     static List<Aresta> resp = null;
     static Aresta auxaresta = null;
     static double peso;
-    
-    
+      
     public Prim(GrafoAbstrato g){
         filaprioridade = new PriorityQueue<>();
         for(int i = 0; i < g.getNumeroDeVertices(); i++){
@@ -38,11 +37,9 @@ public class Prim {
         for(int u = 0; u < g.getNumeroDeVertices(); u++){
             key[u]= Double.MAX_VALUE;
             color[u]= -1;
-        }
-        
+        }        
         resp = new LinkedList<>();
 
-    
     }
     
     public static RespostaKruskalPrim prim(GrafoAbstrato g){

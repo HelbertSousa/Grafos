@@ -37,9 +37,7 @@ public class Kruskal {
             for(int j = 0; j < g.getNumeroDeVertices(); j++){
                 edges.add(new Aresta(i,j,(g.getAresta(i,j))));
             }
-        }
-        
-         
+        }      
     }
 
     public static RespostaKruskalPrim krus(GrafoAbstrato g) {
