@@ -43,7 +43,7 @@ public class Kruskal {
         while ((edgesaux  < g.getNumeroDeVertices()-1 || num < g.getNumeroArestas())){
                        
             if (find(edges.get(num).getOrigem()) != find(edges.get(num).getDestino())){             
-                unite(edges.get(num).getOrigem(),edges.get(num).getDestino());           
+                unite(edges.get(num).getOrigem(), edges.get(num).getDestino());           
                 peso += edges.get(num).getPeso();    
                 
                 edgesaux++;

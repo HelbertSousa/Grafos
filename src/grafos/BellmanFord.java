@@ -21,13 +21,21 @@ public class BellmanFord {
     }
 
     public boolean bellmanford(GrafoAbstrato g, int inicio){
-        boolean resp = false;
         
         for(int i = 1; i < g.getNumeroDeVertices() - 1;  i++){
-            for (Integer v : g.getAdjacentes(i))
+            for (Integer v : g.getAdjacentes(i)){
+                relax(i,v, g.getAresta(i, v));
+            }
+        }
+        
+        for(int u = 0; u < g.getNumeroDeVertices(); u++){
+            for(int v = 0; v < g.getNumeroArestas(); v++)
+                if(d[v] > d[u] + g.getAresta(u, v)){
+                    return false;
+                }  
         }
             
-        return resp;
+        return true;
     }
     
     public static void relax(int u, int v, double peso){
@@ -36,7 +44,4 @@ public class BellmanFord {
             predecessor[v] = u;
         }    
     }
-    
-
-
 }
