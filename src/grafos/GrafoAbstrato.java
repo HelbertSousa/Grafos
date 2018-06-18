@@ -34,4 +34,6 @@ public abstract class GrafoAbstrato {
     public abstract List<Integer> getAdjacentes(int vertice);
     
     public abstract int getNumeroDeVertices();
+    
+    public abstract Aresta getInstanciaAresta(int origem, int destino);
 }

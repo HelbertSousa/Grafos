@@ -44,7 +44,10 @@ public final class Grafo_MA extends GrafoAbstrato {
     @Override
     public double getAresta(int origem, int destino) {
         return mat[origem][destino];
-
+    }
+    public Aresta getInstanciaAresta(int origem, int destino) {
+        Aresta aresta = new Aresta(origem,destino);
+        return aresta;
     }
 
     @Override

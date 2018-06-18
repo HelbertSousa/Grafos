@@ -63,6 +63,7 @@ public final class Grafo_LA extends GrafoAbstrato {
 
     @Override
     public double getAresta(int origem, int destino) {
+        Aresta aresta;
         List<Aresta> arestas = vertices.get(origem);
         for (Aresta aux : arestas) {
             if (aux.getDestino() == destino) {
@@ -70,6 +71,17 @@ public final class Grafo_LA extends GrafoAbstrato {
             }
         }
         return 0.0;
+    }
+    
+    public Aresta getInstanciaAresta(int origem, int destino) {
+        Aresta aresta;
+        List<Aresta> arestas = vertices.get(origem);
+        for (Aresta aux : arestas) {
+            if (aux.getDestino() == destino) {
+                return aux;
+            }
+        }
+        return null;
     }
 
     @Override

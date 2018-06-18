@@ -18,7 +18,7 @@ import java.util.Queue;
 public class Prim {
     static Queue<Aresta> filaprioridade = null;
     static double [] key = null;
-    static int [] color, pred  = null;
+    static int [] color, predecessor  = null;
     static List<Aresta> resp = null;
     static Aresta auxaresta = null;
     static double peso;
@@ -33,7 +33,7 @@ public class Prim {
         
         key = new double[g.getNumeroDeVertices()];
         color = new int[g.getNumeroDeVertices()];
-        pred = new int [g.getNumeroDeVertices()];
+        predecessor = new int [g.getNumeroDeVertices()];
         for(int u = 0; u < g.getNumeroDeVertices(); u++){
             key[u]= Double.MAX_VALUE;
             color[u]= -1;
@@ -45,17 +45,18 @@ public class Prim {
     public static RespostaKruskalPrim prim(GrafoAbstrato g){
         RespostaKruskalPrim result = new RespostaKruskalPrim();
         key[0] = 0;
-        pred[0] = 0;
+        predecessor[0] = 0;
         while(!filaprioridade.isEmpty()){
             auxaresta = filaprioridade.poll();
             resp.add(auxaresta);
             int u = auxaresta.getOrigem();
             
             for(Integer v : g.getAdjacentes(u)){
-                if (color[v] == -1 && g.getAresta(u, v) < key[v]){//duvida em como comparar se existe tal aresta em resp
+                if (filaprioridade.contains(g.getInstanciaAresta(u, v)) 
+                        && g.getAresta(u, v) < key[v]){//duvida em como comparar se existe tal aresta em resp
                         key[v] = g.getAresta(u, v);
                         //Mudar valor da fila para nova chave;
-                        pred[v] = u;     
+                        predecessor[v] = u;     
                 }
             }
         }
@@ -64,7 +65,7 @@ public class Prim {
         }
         
         result.peso = peso;
-        result.resp = pred;
+        result.resp = predecessor;
         
         return result;
     }
