@@ -20,8 +20,8 @@ public class BellmanFord {
         }
     }
 
-    public boolean bellmanford(GrafoAbstrato g, int inicio){
-        
+    public static RespostaDijkBellFor bellmanford(GrafoAbstrato g, int inicio){
+        RespostaDijkBellFor result = new RespostaDijkBellFor();
         for(int i = 1; i < g.getNumeroDeVertices() - 1;  i++){
             for (Integer v : g.getAdjacentes(i)){
                 relax(i,v, g.getAresta(i, v));
@@ -31,11 +31,11 @@ public class BellmanFord {
         for(int u = 0; u < g.getNumeroDeVertices(); u++){
             for(int v = 0; v < g.getNumeroArestas(); v++)
                 if(d[v] > d[u] + g.getAresta(u, v)){
-                    return false;
+                    break;
                 }  
         }
             
-        return true;
+        return result;
     }
     
     public static void relax(int u, int v, double peso){

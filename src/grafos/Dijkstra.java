@@ -15,7 +15,7 @@ import java.util.Queue;
  *
  * @author a15026
  */
-public abstract class Dijkstra {
+public class Dijkstra {
     static int [] predecessor = null;
     static double[] d = null;
     static List<Aresta> resp = null;
@@ -36,14 +36,22 @@ public abstract class Dijkstra {
         resp = new LinkedList<>();        
     }
     
-    public static void dijkstra(GrafoAbstrato g, int vertice){
+    public static RespostaDijkBellFor dijkstra(GrafoAbstrato g, int vertice){
+        RespostaDijkBellFor result = new RespostaDijkBellFor();
+        
         while(fila.isEmpty()){
             aux = (Aresta) fila.poll();
             resp.add(aux);
             for(Integer v : g.getAdjacentes(aux.getOrigem())){
                 relax(aux.getOrigem(), v, g.getAresta(aux.getOrigem(), v));
             }
-        }               
+        }  
+        for(int i = 0; i < d.length; i++){
+            result.peso += d[i];
+        }
+        
+        result.resp = predecessor;
+        return result;
     }
     
     public static void relax(int u, int v, double peso){

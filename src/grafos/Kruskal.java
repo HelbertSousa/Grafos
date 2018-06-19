@@ -20,6 +20,7 @@ public class Kruskal {
     
     static ArrayList<Aresta> edges = null;
     static int pai[] = null;
+    
     public Kruskal(GrafoAbstrato g) {
 
         pai = new int[g.getNumeroDeVertices()];
