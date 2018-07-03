@@ -47,10 +47,14 @@ public class Prim {
         RespostaKruskalPrim result = new RespostaKruskalPrim();
         key[0] = 0;
         predecessor[0] = 0;
+        
         while(!filaprioridade.isEmpty()){
             auxaresta = filaprioridade.remove();
             resp.add(auxaresta);
+            
             int u = auxaresta.getOrigem();
+            
+            filaprioridade.remove();
             
             for(Integer v : g.getAdjacentes(u)){
                 if (!visit[u]

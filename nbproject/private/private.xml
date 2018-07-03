@@ -12,8 +12,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/a15026/Música/Atual/Grafos/src/grafos/GrafoKruskalPrim.java</file>
-            <file>file:/home/a15026/Música/Atual/Grafos/src/grafos/Prim.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/Aresta.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/GrafoKruskalPrim.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/BellmanFord.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/LerKruskalPrim.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/Representacao.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/BuscaProfundidade.java</file>
+            <file>file:/home/a15026/Downloads/Atual/Grafos/src/grafos/Prim.java</file>
         </group>
     </open-files>
 </project-private>
