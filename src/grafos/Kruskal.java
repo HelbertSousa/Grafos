@@ -44,7 +44,7 @@ public class Kruskal {
         while ((edgesaux  < g.getNumeroDeVertices()-1 || num < g.getNumeroArestas())){
                        
             if (find(edges.get(num).getOrigem()) != find(edges.get(num).getDestino())){             
-                unite(edges.get(num).getOrigem(), edges.get(num).getDestino());           
+                union(edges.get(num).getOrigem(), edges.get(num).getDestino());           
                 peso += edges.get(num).getPeso();    
                 
                 edgesaux++;
@@ -68,7 +68,7 @@ public class Kruskal {
         return find(pai[x]);
     }
 
-    public static void unite(int x, int y) {
+    public static void union(int x, int y) {
         int fx = find(x);
         int fy = find(y);
         pai[fx] = fy;

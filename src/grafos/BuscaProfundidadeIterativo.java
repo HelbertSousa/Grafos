@@ -66,7 +66,7 @@ public class BuscaProfundidadeIterativo {
             }
 
             Iterator<Integer> percorrer = g.getAdjacentes(vertice).iterator();
-            int aux = 0;
+            
             while (percorrer.hasNext()) {
                 int v = percorrer.next();
                 if (!visitado.get(v)) {
