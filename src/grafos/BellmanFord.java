@@ -5,6 +5,8 @@
  */
 package grafos;
 
+import java.util.Arrays;
+
 /**
  *
  * @author a15026
@@ -14,8 +16,10 @@ public class BellmanFord {
     static int [] predecessor = null;
     
     public BellmanFord(GrafoAbstrato g){
+        d = new double[g.getNumeroArestas()];
+        predecessor = new int[g.getNumeroDeVertices()];
         for(int i = 0; i < g.getNumeroDeVertices(); i++){
-            d[i] = Integer.MAX_VALUE;
+            d[i] = Double.MAX_VALUE;
             predecessor[i] = -1;
         }
     }
@@ -34,7 +38,11 @@ public class BellmanFord {
                     break;
                 }  
         }
-            
+        for(int i = 0; i < d.length; i++){
+            result.peso += d[i];
+        }
+        result.resp = predecessor;
+        
         return result;
     }
     
