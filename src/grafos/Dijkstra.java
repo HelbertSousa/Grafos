@@ -56,7 +56,7 @@ public class Dijkstra {
     }
     
     public static void relax(int u, int v, double peso){
-        if(d[v] > d[u] + peso){
+        if(d[u] + peso < d[v] ){
             d[v] = d[u] + peso;
             predecessor[v] = u;
         }    
