@@ -23,6 +23,8 @@ public class Dijkstra {
     static Aresta aux = null;
     
     public Dijkstra(GrafoAbstrato g){
+        d = new double[g.getNumeroArestas()];
+        predecessor = new int[g.getNumeroDeVertices()];
         for(int i = 0; i < g.getNumeroDeVertices(); i++){
             d[i] = Integer.MAX_VALUE;
             predecessor[i] = -1;
@@ -36,9 +38,9 @@ public class Dijkstra {
         resp = new LinkedList<>();        
     }
     
-    public static RespostaDijkBellFor dijkstra(GrafoAbstrato g, int vertice){
+    public static RespostaDijkBellFor dijkstra(GrafoAbstrato g, int inicio){
         RespostaDijkBellFor result = new RespostaDijkBellFor();
-        
+        predecessor[inicio] = 0;
         while(fila.isEmpty()){
             aux = (Aresta) fila.poll();
             resp.add(aux);
@@ -49,7 +51,6 @@ public class Dijkstra {
         for(int i = 0; i < d.length; i++){
             result.peso += d[i];
         }
-        
         result.resp = predecessor;
         
         return result;
